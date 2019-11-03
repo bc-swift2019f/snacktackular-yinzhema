@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseUI
 import GoogleSignIn
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        GMSPlacesClient.provideAPIKey("AIzaSyCye9vl9wSL5Hg6dh4rlFuQ_sasBwx65k8")
         FirebaseApp.configure()
         return true
     }
