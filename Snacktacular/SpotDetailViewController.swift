@@ -92,13 +92,13 @@ class SpotDetailViewController: UIViewController {
         } else {
             navigationController?.popViewController(animated: true)
         }
-
     }
 
     @IBAction func photoButtonPressed(_ sender: UIButton) {
     }
     
     @IBAction func reviewButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "AddReview", sender: nil)
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
