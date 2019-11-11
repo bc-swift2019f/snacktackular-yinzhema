@@ -23,4 +23,9 @@ class Photo {
         self.date=date
         self.documentUUID=documentUUID
     }
+    
+    convenience init(){
+        let postedBy=Auth.auto().currentUser?.email ?? "Unknown User"
+        self.init(image: UIImage(), description: "", postedBy: "", date: Date(), documentUUID: "")
+    }
 }
