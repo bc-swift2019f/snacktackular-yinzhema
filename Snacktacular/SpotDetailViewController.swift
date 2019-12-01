@@ -311,10 +311,17 @@ extension SpotDetailViewController: UICollectionViewDelegate,UICollectionViewDat
 
 extension SpotDetailViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let photo=Phto()
+        let photo=Photo()
         photo.image=info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         photos.photoArray.append(photo)
         dismiss(animated: true) {
+            photo.saveData(spot:spot){ (success) in
+                if success{
+                    self.photo.photoArray.append(photo)
+                    self.collectionView.reloadData()
+                }
+                
+            }
             self.collectionView.reloadData()
         }
     }
@@ -325,7 +332,7 @@ extension SpotDetailViewController: UINavigationControllerDelegate, UIImagePicke
     
     func accessLibrary(){
         imagePicker.sourceType = .photoLibrary
-        present(imagePicker,animated:true, comppletion: nil)
+        present(imagePicker,animated:true, completion: nil)
     }
     
     func accessCamera(){
