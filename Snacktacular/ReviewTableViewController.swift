@@ -127,6 +127,7 @@ class ReviewTableViewController: UITableViewController {
             navigationController?.popViewController(animated: true)
         }
     }
+    
     @IBAction func starButtonPressed(_ sender: UIButton) {
         rating=sender.tag+1//add one since we are 0 index
         
@@ -140,11 +141,21 @@ class ReviewTableViewController: UITableViewController {
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         leaveViewController()
     }
+    
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
+        review.deleteData(spot: spot) { (success) in
+            if success {
+                self.leaveViewController()
+            } else{
+                print("***ERROR: Delete unsuccessful")
+            }
+        }
     }
+    
     @IBAction func reviewTitleChanged(_ sender: UITextField) {
         enableDisableSaveButton()
     }
+    
     @IBAction func returnTitleDonePressed(_ sender: UITextField) {
         saveThenSegue()
     }
