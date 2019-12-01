@@ -620,7 +620,7 @@
                                                         <constraint firstAttribute="height" constant="21" id="XeZ-Hi-1Ey"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6qI-4I-vu8">
@@ -696,12 +696,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="HQh-PX-tX2">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wz0-bn-900">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="wz0-bn-900">
                             <connections>
                                 <action selector="cancelButtonPressed:" destination="rj6-f8-fTQ" id="dXL-Es-iWX"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ZoW-Dt-2ri">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="ZoW-Dt-2ri">
                             <connections>
                                 <action selector="saveButtonPressed:" destination="rj6-f8-fTQ" id="XO8-Ie-AAD"/>
                             </connections>
@@ -709,7 +709,6 @@
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="RreviewTitle" destination="Lcp-x4-sTL" id="0as-CY-PrA"/>
                         <outlet property="addressLabel" destination="8lg-oh-THW" id="LgR-4e-VbO"/>
                         <outlet property="buttonsBackgroundView" destination="vej-pd-9g2" id="f8r-fP-Leh"/>
                         <outlet property="cancelBarButton" destination="wz0-bn-900" id="ARG-2j-L4P"/>
@@ -717,7 +716,8 @@
                         <outlet property="nameLabel" destination="JCF-4C-hDA" id="k3W-HS-U1H"/>
                         <outlet property="postedByLabel" destination="Omw-Y7-Edi" id="FVc-wd-uDy"/>
                         <outlet property="reviewDateLabel" destination="N2t-44-QNf" id="GHd-sl-JiP"/>
-                        <outlet property="reviewView" destination="6qI-4I-vu8" id="EFE-eM-koh"/>
+                        <outlet property="reviewTextView" destination="6qI-4I-vu8" id="EFE-eM-koh"/>
+                        <outlet property="reviewTitleField" destination="Lcp-x4-sTL" id="0as-CY-PrA"/>
                         <outlet property="saveBarButton" destination="ZoW-Dt-2ri" id="PaQ-YK-Mnx"/>
                         <outletCollection property="starButtonCollection" destination="fAN-TO-0b0" collectionClass="NSMutableArray" id="tKa-sr-u86"/>
                         <outletCollection property="starButtonCollection" destination="Jly-e3-0ks" collectionClass="NSMutableArray" id="i9k-N5-Cmo"/>
