@@ -16,7 +16,7 @@ class Photo {
     var date: Date
     var documentUUID: String
     var dictionary: [String:Any]{
-        return ["":description, "postedBy": postedBy, "date":date]
+        return ["":description, "postedBy": postedBy, "date":timeIntervalDate]
     }
     
     init(image: UIImage, description: String, postedBy: String, date: Date, documentUUID: String){
@@ -30,6 +30,13 @@ class Photo {
     convenience init(){
         let postedBy=(Auth.auto() as AnyObject).currentUser.email ?? "Unknown User"
         self.init(image: UIImage(), description: "", postedBy: "", date: Date(), documentUUID: "")
+    }
+    
+    convenience init(dictionary:[String:Any]){
+        let title=dictionary["description"] as! String? ?? ""
+        let postedBy=dictionary["postedBy"] as! String? ?? ""
+        let date=Date(timeIntervalSince1970: timeIntervalDate)
+        self.init(image: UIImage(),description: description, postedBy: postedBy, date:date, documentUUID: "")
     }
     
     func saveData(spot: Spot, completed: @escaping(Bool)->()){
